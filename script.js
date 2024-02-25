@@ -23,11 +23,11 @@ function encrypt(text) {
 }
 
 function decrypt(text) {
-  text = text.replaceAll("enter", "e");
   text = text.replaceAll("imes", "i");
-  text = text.replaceAll("ai", "a");
   text = text.replaceAll("ober", "o");
   text = text.replaceAll("ufat", "u");
+  text = text.replaceAll("ai", "a");
+  text = text.replaceAll("enter", "e");
   return text;
 }
 
