@@ -1,17 +1,27 @@
 function processText() {
   var text = document.getElementById("text").value.toLowerCase();
-  var option = document.querySelector('input[name="option"]:checked').value;
+  var option = document.querySelector('input[name="option"]:checked');
+
+  if (!option) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Please select an option (Encrypt or Decrypt) before processing.',
+    });
+    return; // Detener la ejecución si no se ha seleccionado ninguna opción
+  }
+
   var result = "";
 
-  if (option === "encrypt") {
-    x;
+  if (option.value === "encrypt") {
     result = encrypt(text);
-  } else if (option === "decrypt") {
+  } else if (option.value === "decrypt") {
     result = decrypt(text);
   }
 
   document.getElementById("result").value = result;
 }
+
 
 function encrypt(text) {
   text = text.replaceAll("e", "enter");
@@ -33,19 +43,36 @@ function decrypt(text) {
 
 function copyToClipboard() {
   var copyText = document.getElementById("result");
+
   if (copyText.value.trim() === "") {
-    alert("There is nothing to copy. Please enter some text.");
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'There is nothing to copy. Please enter some text.',
+    });
   } else {
     copyText.select();
     copyText.setSelectionRange(0, 99999); /* For mobile devices */
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
 
-    // Reset the page and clear the textarea
-    location.reload();
-    copyText.value = "";
+    Swal.fire({
+      icon: 'success',
+      title: 'Copied!',
+      text: 'The text has been copied successfully.',
+      allowOutsideClick: false,
+      showCloseButton: true,
+    }).then((result) => {
+      // Verificar si el usuario cerró la alerta manualmente
+      if (result.isConfirmed || result.isDismissed) {
+        // Resetear la textarea
+        copyText.value = "";
+      }
+    });
   }
 }
+
+
+
 
 //background.js
 
@@ -97,3 +124,5 @@ function draw() {
 }
 
 setInterval(draw, 35);
+
+

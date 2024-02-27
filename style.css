@@ -95,7 +95,7 @@ button {
 
   button:last-of-type {
     width: 90%; /* Ancho del botón "Copy" */
-    max-width: 300px; /* Ancho máximo */
+    max-width: 70px; /* Ancho máximo */
     background-color: #034a10;
     color: #00ff00;
     border: 1px solid #00ff00;
@@ -124,4 +124,61 @@ footer {
 
 .social-links a:hover {
   text-decoration: underline;
+}
+
+/* Personalización de SweetAlert2 */
+.swal2-popup {
+  font-family: 'VT323', monospace;
+}
+
+.swal2-title {
+  color: #00ff00; /* Color del título */
+}
+
+.swal2-content {
+  color: #00ff00; /* Color del contenido */
+}
+
+.swal2-icon {
+  color: #00ff00; /* Color del icono */
+}
+
+.swal2-close-button {
+  color: #00ff00; /* Color del botón de cerrar */
+}
+
+.swal2-styled {
+  background-color: #034a10 !important; /* Color de fondo del botón "OK" */
+  color: #00ff00 !important; /* Color del texto del botón "OK" */
+}
+
+/* Personalización de SweetAlert2 */
+.swal2-popup {
+  font-family: 'VT323', monospace;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente negro */
+}
+
+.swal2-title,
+.swal2-content,
+.swal2-icon,
+.swal2-close-button {
+  color: #00ff00; /* Color del texto y elementos interiores */
+}
+
+.swal2-styled {
+  background-color: #034a10 !important; /* Color de fondo del botón "OK" */
+  color: #00ff00 !important; /* Color del texto del botón "OK" */
+}
+
+
+/* Personalización del icono en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .swal2-popup .swal2-icon svg {
+    width: 2em !important; /* Ajustar el tamaño del icono */
+    height: 2em !important;
+  }
+
+  .swal2-popup .swal2-icon path {
+    fill: #00ff00 !important; /* Color del icono */
+  }
 }
