@@ -1,61 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encryptor/Decryptor</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encryptor/Decryptor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/internet.png" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div class="all1">
+    <h1>Encryptor / Decryptor</h1>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="/internet.png" />
-  </head>
-  <body>
-    <canvas id="c"></canvas>
-    <div class="all1">
-      <h1>Encryptor / Decryptor</h1>
-
-      <textarea
-        id="text"
-        rows="4"
-        cols="50"
-        placeholder="Enter text here"
-      ></textarea>
-      <br />
-      <div class="inputs">
-        <input type="radio" id="encrypt" name="option" value="encrypt" />
-        <label for="encrypt">Encrypt</label><br />
-        <input type="radio" id="decrypt" name="option" value="decrypt" />
-        <label for="decrypt">Decrypt</label><br />
-      </div>
-      <button onclick="processText()">Process</button><br />
-
-      <textarea
-        id="result"
-        rows="4"
-        cols="50"
-        readonly
-        placeholder="No text has been processed."
-      ></textarea
-      ><br />
-      <button onclick="copyToClipboard()">Copy</button><br />
-      <footer>
-        <div class="footer-content">
-          <p>
-            Developed by:
-            <a href="https://www.instagram.com/jsttr98/" target="_blank"
-              >Jose Estrella</a
-            >
-          </p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/cruzsttr13/" target="_blank"
-              >LinkedIn</a
-            >
-            <a href="https://github.com/CruzSttr13" target="_blank">GitHub</a>
-            <p>Page developed for the Oracle Next Education G6 program.</p>
-          </div>
-        </div>
-      </footer>
+    <textarea id="text" rows="4" cols="50" placeholder="Enter text here"></textarea>
+    <br />
+    <div class="inputs">
+      <input type="radio" id="encrypt" name="option" value="encrypt" />
+      <label for="encrypt">Encrypt</label><br />
+      <input type="radio" id="decrypt" name="option" value="decrypt" />
+      <label for="decrypt">Decrypt</label><br />
     </div>
-    <script src="script.js"></script>
-  </body>
+    <button onclick="processText()">Process</button><br />
+
+    <textarea id="result" rows="4" cols="50" readonly placeholder="No text has been processed."></textarea><br />
+    <button onclick="copyToClipboard()">Copy</button><br />
+
+    <footer>
+      <div class="footer-content">
+        <p>
+          Developed by:
+          <a href="https://www.instagram.com/jsttr98/" target="_blank">Jose Estrella</a>
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/cruzsttr13/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/CruzSttr13" target="_blank">GitHub</a>
+          <p>Page developed for the Oracle Next Education G6 program.</p>
+        </div>
+      </div>
+
+
+      
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
