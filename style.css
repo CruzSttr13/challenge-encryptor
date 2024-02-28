@@ -1,9 +1,13 @@
+/* Importing font */
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-/*git init*/
+
+/* Global styles */
 * {
   font-family: "VT323", monospace;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Background animation canvas */
 canvas {
   display: block;
   position: fixed;
@@ -11,9 +15,10 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Asegura que el canvas esté detrás del contenido */
+  z-index: -1; /* Ensure canvas is behind content */
 }
 
+/* Main content styling */
 h1 {
   font-size: 3em;
   text-align: center;
@@ -28,22 +33,22 @@ label {
 }
 
 textarea {
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-  color: #00ff00; /* Color del texto */
-  border: 1px solid #00ff00; /* Borde */
-  padding: 10px; /* Relleno */
-  margin: 0 auto; /* Centra la textarea horizontalmente */
-  width: 60%; /* Ancho */
-  max-width: 700px; /* Ancho máximo */
-  height: 100px; /* Altura */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 700px;
+  height: 100px;
   display: block;
-  resize: none; /* Evita la redimensión */
+  resize: none;
   font-size: 1.5em;
   text-align: center;
 }
 
+/* Input options alignment */
 .inputs {
-  /*Alinear los elementos en el centro*/
   color: #034a10;
   display: flex;
   justify-content: center;
@@ -51,35 +56,36 @@ textarea {
   flex-direction: column;
 }
 
+/* Process button */
 button {
-  background-color: #034a10; /* Color de fondo */
-  color: #00ff00; /* Color del texto */
-  border: 1px solid #00ff00; /* Borde */
-  padding: 10px; /* Relleno */
-  margin: 0 auto; /* Centra el botón horizontalmente */
-  width: 60%; /* Ancho */
-  max-width: 200px; /* Ancho máximo */
+  background-color: #034a10;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 200px;
   display: block;
-  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  cursor: pointer;
   font-size: 1.5em;
 }
 
-/* Estilos específicos para dispositivos móviles */
+/* Mobile responsive styles */
 @media only screen and (max-width: 600px) {
   .all1 {
-    width: 90%; /* Ajustar el ancho del contenedor */
-    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ajustar la altura del contenedor al 100% de la ventana */
+    min-height: 100vh;
   }
 
   h1 {
-    font-size: 2em; /* Reducir el tamaño del título */
-    margin-bottom: 20px; /* Espacio entre el título y el siguiente elemento */
-    text-align: center; /* Centrar el texto del título */
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
   textarea,
@@ -87,15 +93,15 @@ button {
   button,
   label,
   #result {
-    width: 90%; /* Ancho del contenido */
-    max-width: 300px; /* Ancho máximo */
-    margin-bottom: 20px; /* Espacio entre cada elemento */
-    text-align: center; /* Centrar el texto de los elementos */
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
   button:last-of-type {
-    width: 90%; /* Ancho del botón "Copy" */
-    max-width: 70px; /* Ancho máximo */
+    width: 90%;
+    max-width: 70px;
     background-color: #034a10;
     color: #00ff00;
     border: 1px solid #00ff00;
@@ -104,6 +110,7 @@ button {
   }
 }
 
+/* Footer styling */
 footer {
   font-size: 1.5em;
   color: #ffffff;
@@ -111,11 +118,13 @@ footer {
   text-align: center;
 }
 
+/* Footer content container */
 .footer-content {
   max-width: 600px;
   margin: 0 auto;
 }
 
+/* Social links in footer */
 .social-links a {
   color: #ffffff;
   text-decoration: none;
@@ -126,59 +135,32 @@ footer {
   text-decoration: underline;
 }
 
-/* Personalización de SweetAlert2 */
+/* SweetAlert2 customization */
 .swal2-popup {
   font-family: 'VT323', monospace;
-}
-
-.swal2-title {
-  color: #00ff00; /* Color del título */
-}
-
-.swal2-content {
-  color: #00ff00; /* Color del contenido */
-}
-
-.swal2-icon {
-  color: #00ff00; /* Color del icono */
-}
-
-.swal2-close-button {
-  color: #00ff00; /* Color del botón de cerrar */
-}
-
-.swal2-styled {
-  background-color: #034a10 !important; /* Color de fondo del botón "OK" */
-  color: #00ff00 !important; /* Color del texto del botón "OK" */
-}
-
-/* Personalización de SweetAlert2 */
-.swal2-popup {
-  font-family: 'VT323', monospace;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente negro */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .swal2-title,
 .swal2-content,
 .swal2-icon,
 .swal2-close-button {
-  color: #00ff00; /* Color del texto y elementos interiores */
+  color: #00ff00;
 }
 
 .swal2-styled {
-  background-color: #034a10 !important; /* Color de fondo del botón "OK" */
-  color: #00ff00 !important; /* Color del texto del botón "OK" */
+  background-color: #034a10 !important;
+  color: #00ff00 !important;
 }
 
-
-/* Personalización del icono en dispositivos móviles */
+/* Customizing icon on mobile devices */
 @media only screen and (max-width: 600px) {
   .swal2-popup .swal2-icon svg {
-    width: 2em !important; /* Ajustar el tamaño del icono */
+    width: 2em !important;
     height: 2em !important;
   }
 
   .swal2-popup .swal2-icon path {
-    fill: #00ff00 !important; /* Color del icono */
+    fill: #00ff00 !important;
   }
 }
